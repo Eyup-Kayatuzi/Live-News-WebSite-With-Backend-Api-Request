@@ -1,2 +1,3 @@
 # Live News Site With Api Request
- Website is working by reading backend-sided APIs. Also service layer has been created for connecting to api.
+Live News WebSite is created by backend-sided API request in Asp.net core mvc project.
+This project has two layers and one of them is used for connecting to api. Also user can open videos and can go to base source of news.

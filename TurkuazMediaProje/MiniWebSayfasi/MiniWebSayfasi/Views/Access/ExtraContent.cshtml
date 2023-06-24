@@ -1,0 +1,66 @@
+﻿@model dynamic
+<div class="row">
+    @{
+        for (int i = 1; i < 5; i++)
+        {
+            <div class="col-3 mt-3 bg-danger">
+                <a id="degisen-sayfa" href="https://www.google.com/search?q= @(Model[0][i]["Url"])" target="_blank">
+                    <img src="@Model[0][i]["primaryImage"]" class="img-fluid" />
+                </a>
+                <h4 class="mt-3">
+                    <a href="https://www.google.com/search?q= @(Model[0][i]["Url"])" target="_blank" class="text-white text-decoration-none">
+                        @(Model[0][i]["TitleShort"] != null ? Model[0][i]["TitleShort"] : Model[0][i]["Title"])
+                    </a>
+                </h4>
+            </div>
+        }
+    }
+    <div class="col-12 mt-3" style="max-width: 100%;">
+        <video controls class="mt-3" style="max-width: 100%; height: auto;>
+            <img src="@Model[1][1]["primaryImage"]" class="img-fluid" />
+            <source src="@Model[1][1]["VideoUrl"]" type="video/mp4">
+        </video>
+
+        <h2>
+            @(Model[1][1]["TitleShort"] != null ? Model[1][1]["TitleShort"] : Model[1][1]["Title"])
+        </h2>
+        <p>
+            @Model[1][1]["Spot"]
+        </p>
+    </div>
+    @{
+        for (int i = 5; i < 9; i++)
+        {
+            <div class="col-3 mt-3 ">
+                <a id="degisen-sayfa" href="https://www.google.com/search?q= @(Model[0][i]["Url"])" target="_blank">
+                    <img src="@Model[0][i]["primaryImage"]" class="img-fluid" />
+                </a>
+                <h4 class="mt-3">
+                    <a href="https://www.google.com/search?q= @(Model[0][i]["Url"])" target="_blank" class="text-black text-decoration-none">
+                        @(Model[0][i]["TitleShort"] != null ? Model[0][i]["TitleShort"] : Model[0][i]["Title"])
+                    </a>
+                </h4>
+            </div>
+        }
+    }
+
+    @{
+        for (int i = 10; i < 13; i++)
+        {
+            <div class="col-12 mt-3 align-content-center" style="max-width: 100%;">
+                <h3 class="mt-5 text-center">
+                    @Model[0][i]["Title"]
+                </h3>
+                <p style ="max-width: 100%;">
+                    (@Model[0][i]["Spot"])
+                </p>
+                <a class="d-flex justify-content-center" id="degisen-sayfa" href="https://www.google.com/search?q= @(Model[0][i]["Url"])" target="_blank">
+                    <img src="@Model[0][i]["primaryImage"]" class="img-fluid" />
+                </a>
+            </div>
+        }
+    }
+
+
+
+</div>
